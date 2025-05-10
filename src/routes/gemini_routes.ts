@@ -1,7 +1,7 @@
 import { Router, Request, Response } from 'express';
 
 const router = Router();
-import { geminiController, anotherGeminiController } from '../controllers/gemini';
+import { geminiController, anotherGeminiController, imageGenController } from '../controllers/gemini';
 
 /**
  * @openapi
@@ -55,5 +55,37 @@ router.post('/query-gemini', geminiController);
  *               - gender
  */
 router.post('/another-gemini', anotherGeminiController);
+
+/**
+ * @openapi
+ * /analyze-image:
+ *  post:
+ *    tags: [Gemini]
+ *    description: Analyze an image using the Gemini API.
+ *    requestBody:
+ *     required: true
+ *     content:
+ *       application/json:
+ *          schema:
+ *           type: object
+ *           properties:
+ *             imageData:
+ *               type: string 
+ *             imageType:
+ *               type: string
+ *             bodyPart:
+ *               type: string
+ *             additionalInfo:
+ *               type: string
+ *             mimeType:
+ *               type: string
+ *               description: The MIME type of the image being analyzed.
+ *          required:
+ *            - imageData
+ *            - imageType
+ *            - bodyPart
+ *            - mimeType
+ */
+router.post('/analyze-image', imageGenController)
 
 export default router;

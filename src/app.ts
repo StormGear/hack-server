@@ -18,6 +18,13 @@ const swaggerOptions = {
       version: '1.0.0',
       description: 'Backend Server for Hackathons I participate in',
     },
+    servers: [
+      {
+        name: 'Local server',
+        description: 'Development server',
+        url: `http://localhost:${port}/api`,
+      },
+    ],
   },
   apis: ['./src/routes/*.ts'], // Path to the API routes
 };

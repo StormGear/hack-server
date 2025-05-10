@@ -1,7 +1,7 @@
 import { Router, Request, Response } from 'express';
 
 const router = Router();
-import { geminiController } from '../controllers/gemini';
+import { geminiController, anotherGeminiController } from '../controllers/gemini';
 
 /**
  * @openapi
@@ -28,5 +28,32 @@ import { geminiController } from '../controllers/gemini';
  *               - gender
  */
 router.post('/query-gemini', geminiController);
+
+
+/**
+ * @openapi
+ * /another-gemini:
+ *   post:
+ *     tags: [Gemini]
+ *     description: Another endpoint for Gemini API.
+ *     requestBody:
+ *       required: true
+ *       content:
+ *         application/json:
+ *           schema:
+ *             type: object
+ *             properties:
+ *               symptoms:
+ *                 type: string
+ *               age:
+ *                 type: string
+ *               gender:
+ *                 type: string
+ *             required:
+ *               - symptoms
+ *               - age
+ *               - gender
+ */
+router.post('/another-gemini', anotherGeminiController);
 
 export default router;

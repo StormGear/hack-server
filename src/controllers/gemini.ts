@@ -1,5 +1,8 @@
 import { Application, Request, Response } from "express";
 import { GoogleGenAI } from "@google/genai";
+import { config } from 'dotenv';
+
+config();
 
 const apiKey = process.env.GEMINI_API_KEY;
 
@@ -57,6 +60,8 @@ export const anotherGeminiController = async (req: Request, res: Response) : Pro
         res.status(400).json({ error: 'Invalid request body' });
         return;
     }
+
+    console.log('Gemini API key:', apiKey);
   
     try {
         const response = await fetch(`https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=${apiKey}`, {

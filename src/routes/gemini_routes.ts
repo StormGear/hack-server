@@ -1,9 +1,9 @@
-import { Router, Request, Response } from 'express';
+import { Router } from 'express';
 
 
 const router = Router();
 import { geminiController, anotherGeminiController, imageGenController } from '../controllers/gemini';
-import { perplexityController } from '../controllers/perplexity';
+
 
 /**
  * @openapi
@@ -92,6 +92,6 @@ router.post('/analyze-image', imageGenController)
 
 
 
-router.post('/perplexity', perplexityController);
+
 
 export default router;

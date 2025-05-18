@@ -15,6 +15,7 @@ export const perplexityController = async (req: Request, res: Response) : Promis
             res.status(400).json({ error: 'Invalid request body' });
             return;
         }
+        
      const options = {
             method: 'POST',
             url: 'https://api.perplexity.ai/chat/completions',
@@ -23,7 +24,7 @@ export const perplexityController = async (req: Request, res: Response) : Promis
                 'Content-Type': 'application/json'
             },
             data: {
-                model: "sonar",
+                model: "sonar-reasoning",
                 messages: [
                     {
                         role: "system",
@@ -40,6 +41,11 @@ export const perplexityController = async (req: Request, res: Response) : Promis
         const response = await axios(options);
 
         console.log('Perplexity response:', response.data);
+        res.status(200).json({
+            message: 'Perplexity controller response',
+            data: response.data,
+        });
+
 
     } catch (error) {
         console.error('Error in Perplexity controller:', error);

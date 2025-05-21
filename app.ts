@@ -11,6 +11,8 @@ config();
 const app = express();
 const port = process.env.PORT || 3000;
 
+console.log('Environment Variables: port', process.env.PORT);
+
 const swaggerOptions = {
   definition: {
     openapi: '3.0.0',
@@ -44,5 +46,5 @@ app.get('/', (req, res) => {
 });
 
 app.listen(port, () => {
-  console.log(`Server is running on port ${port}`);
+  console.log(`Server is running  port ${port}`);
 });

@@ -1,8 +1,8 @@
 import express from 'express';
 import swaggerUi from 'swagger-ui-express';
 import swaggerJsdoc from 'swagger-jsdoc';
-import geminiRoutes from './routes/gemini_routes';
-import perplexityRoutes from './routes/perplexity_routes';
+import geminiRoutes from './src/routes/gemini_routes';
+import perplexityRoutes from './src/routes/perplexity_routes';
 import { config } from 'dotenv';
 import cors from 'cors';
 

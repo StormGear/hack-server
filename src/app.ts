@@ -2,6 +2,7 @@ import express from 'express';
 import swaggerUi from 'swagger-ui-express';
 import swaggerJsdoc from 'swagger-jsdoc';
 import geminiRoutes from './routes/gemini_routes';
+import perplexityRoutes from './routes/perplexity_routes';
 import { config } from 'dotenv';
 import cors from 'cors';
 
@@ -36,6 +37,7 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(cors());
 app.use('/api', geminiRoutes);
+app.use('/api/perplexity', perplexityRoutes);
 
 app.get('/', (req, res) => {
   res.send('Express server with TypeScript and Swagger');

@@ -28,6 +28,6 @@ const router = Router();
  *               - age
  *               - gender
  */
-router.post('/perplexity', perplexityController);
+router.post('/query-perplexity', perplexityController);
 
 export default router;

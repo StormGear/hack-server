@@ -1,8 +1,4 @@
 node_modules
-.vscode
-.env
-private.key
-csr.pem
 # Elastic Beanstalk Files
 .elasticbeanstalk/*
 !.elasticbeanstalk/*.cfg.yml

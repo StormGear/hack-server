@@ -4,10 +4,15 @@
 
 Hack-Server is a backend Express server built with TypeScript to support various hackathon projects. It currently features integration with Google's Gemini AI API for medical symptom analysis.
 
+## Project Deployment
+[![Project URL](https://img.shields.io/badge/Project-URL-brightgreen)](https://hack-server-764371013229.europe-west1.run.app/api-docs)
+
+
 ## Features
 
 - RESTful API endpoints using Express
 - Google Gemini AI integration for medical diagnosis
+- Perplexity AI integration for medical diagnosis
 - Swagger documentation for API endpoints
 - TypeScript for type safety
 - Environment variable support with dotenv
@@ -15,7 +20,7 @@ Hack-Server is a backend Express server built with TypeScript to support various
 ## Getting Started
 ### Prerequisites
 
-- Node.js (v14 or later recommended)
+- Node.js (v20 or later recommended)
 - npm or yarn
 
 ### Installation
@@ -37,6 +42,7 @@ npm install
 
 ```plaintext
 GEMINI_API_KEY=your_gemini_api_key_here
+SONAR_API_KEY=your_sonar_api_key_here
 PORT=3000
 ```
 
@@ -73,18 +79,21 @@ API documentation is available via Swagger UI at `/api-docs` when the server is 
 ├── tsconfig.json         # TypeScript configuration
 ├── README.md             # Project documentation
 └── src/                  # Source code directory
-    ├── app.ts            # Main application entry point
     ├── controllers/      # API controllers
     │   └── gemini.ts     # Gemini AI controller
+    │   └── perplexity.ts     # Perplexity AI controller
     └── routes/           # API routes
         └── gemini_routes.ts  # Gemini routes definition
+        └── perplexity_routes.ts  # Perplexity routes definition
+├── app.ts            # Main application entry point
 ```
 
 ## LICENSE
 MIT License
 
 ## Authors
-[StormGear](https://github.com/StormGear)
+[StormGear](https://github.com/StormGear) <br/>
+[papakofi](https://gitlab.com/papakofi)
 
 
 

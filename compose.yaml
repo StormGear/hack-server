@@ -1,0 +1,22 @@
+services:
+  api:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "3000:3000"
+    volumes:
+      - ./:/usr/src/app
+      - /usr/src/app/node_modules
+  frontend:
+    build:
+      context: /Users/papakofi/Desktop/web3/Hackathons/perplexity/genz-doctor
+      dockerfile: Dockerfile
+    container_name: genz-doctor
+    ports:
+      - "8080:8080"
+    volumes:
+      - /Users/papakofi/Desktop/web3/Hackathons/perplexity/genz-doctor:/usr/src/app
+      - /usr/src/app/node_modules
+    stdin_open: true
+    tty: true
